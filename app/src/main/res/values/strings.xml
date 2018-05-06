@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">LiveSmashBar</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="flutter_info"><![CDATA[Flutter is a mobile app SDK developed by Google for building high-performance, high-fidelity, apps for iOS and Android, from a single codebase.Hot Reloading. We can play around with the code by tweaking few lines and simply reloading as your app runs or even by saving the file which saves abundant amount of a developer’s time , so that we can focus more on performance & functionality. We can even fix crashes and continue debugging from where the app left of last time.]]></string>
+    <string name="description">LiveSmashBar is a Kotlin library for showing informative messages.</string>
+    <string name="title">LiveSmashBar</string>
+    <string name="flutter_title">Flutter.io</string>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relative_root"
+        android:paddingTop="@dimen/default_content_top_padding"
+        android:paddingLeft="@dimen/default_content_left_padding"
+        android:paddingBottom="@dimen/default_content_bottom_padding"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="@color/default_background_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+
+        <RelativeLayout
+            android:id="@+id/relative_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:layout_toStartOf="@+id/btn_primary"
+            android:layout_toLeftOf="@+id/btn_primary"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/icon_bar_message"
+                android:layout_width="@dimen/default_image_size"
+                android:layout_height="@dimen/default_image_size"
+                android:layout_marginEnd="@dimen/default_content_top_padding"
+                android:layout_marginRight="@dimen/default_content_padding"
+                android:visibility="gone" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/text_bar_title"
+                style="@style/Default_Message_Title_Style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_toEndOf="@id/icon_bar_message"
+                android:layout_toRightOf="@id/icon_bar_message"
+                android:text="@string/title" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/text_bar_description"
+                style="@style/Default_Message_Description_Style"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@id/text_bar_title"
+                android:layout_toEndOf="@id/icon_bar_message"
+                android:layout_toRightOf="@id/icon_bar_message"
+                android:text="@string/description" />
+
+            <LinearLayout
+                android:id="@+id/linear_actions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_content_padding"
+                android:layout_below="@id/text_bar_description"
+                android:gravity="right|end"
+                android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/btn_bar_negative"
+                    style="@style/Default_Action_Negative_Style"
+                    android:layout_width="wrap_content"
+                    android:text="@string/negative" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/btn_bar_positive"
+                    style="@style/Default_Action_Positive_Style"
+                    android:layout_width="wrap_content"
+                    android:text="@string/positive" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/btn_primary"
+            style="@style/Default_Action_Positive_Style"
+            android:layout_width="wrap_content"
+            android:text="@string/done"
+            android:layout_marginRight="@dimen/default_content_right_padding"
+            android:visibility="gone"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

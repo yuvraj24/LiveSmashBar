@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_content_top_padding">14dp</dimen>
+    <dimen name="default_content_left_padding">14dp</dimen>
+    <dimen name="default_content_right_padding">14dp</dimen>
+    <dimen name="default_content_bottom_padding">14dp</dimen>
+
+    <dimen name="default_content_padding">8dp</dimen>
+
+    <dimen name="default_image_size">24dp</dimen>
+    <dimen name="default_action_button_height">36dp</dimen>
+
+    <dimen name="default_title_text_size">16sp</dimen>
+    <dimen name="default_description_text_size">16sp</dimen>
+    <dimen name="default_action_text_size">14sp</dimen>
+
+    <dimen name="top_compensation_margin">16dp</dimen>
+    <dimen name="bottom_compensation_margin">30dp</dimen>
+
+    <dimen name="margin5">5dp</dimen>
+    <dimen name="margin10">10dp</dimen>
+    <dimen name="margin15">15dp</dimen>
+    <dimen name="margin20">20dp</dimen>
+
+</resources>

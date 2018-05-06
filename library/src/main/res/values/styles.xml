@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Default_Message_Title_Style">
+        <item name="android:textSize">@dimen/default_title_text_size</item>
+        <item name="android:text">@string/title</item>
+        <item name="android:layout_marginBottom">@dimen/default_content_padding</item>
+        <item name="android:textColor">@color/default_title_color</item>
+        <item name="android:layout_marginRight">@dimen/default_content_right_padding</item>
+    </style>
+
+    <style name="Default_Message_Description_Style">
+        <item name="android:textSize">@dimen/default_description_text_size</item>
+        <item name="android:text">@string/description</item>
+        <item name="android:textColor">@color/default_description_color</item>
+        <item name="android:layout_marginRight">@dimen/default_content_padding</item>
+    </style>
+
+    <style name="Default_Action_Positive_Style">
+        <item name="android:textSize">@dimen/default_action_text_size</item>
+        <item name="android:textColor">@color/default_action_color</item>
+        <item name="android:layout_height">@dimen/default_action_button_height</item>
+        <item name="android:layout_marginRight">@dimen/default_content_right_padding</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item> 
+        <item name="android:text">@string/positive</item>
+    </style>
+
+    <style name="Default_Action_Negative_Style">
+        <item name="android:textSize">@dimen/default_action_text_size</item>
+        <item name="android:textColor">@color/default_action_color</item>
+        <item name="android:layout_height">@dimen/default_action_button_height</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">24dp</item>
+        <item name="android:text">@string/negative</item>
+    </style>
+</resources>

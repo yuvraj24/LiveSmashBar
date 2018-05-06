@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="title">LiveSmashBar</string>
+    <string name="description">Notifications Notifications kjbckajsbckajsbckajsws</string>
+    <string name="positive">Done</string>
+    <string name="negative">Cancel</string>
+    <string name="done">DONE</string>
+
+</resources>
