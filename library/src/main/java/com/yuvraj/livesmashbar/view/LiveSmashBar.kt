@@ -30,7 +30,7 @@ import com.yuvraj.livesmashbar.lintener.OnEventTapListener
  */
 open class LiveSmashBar(internal var builder: Builder) {
 
-    val barContainerView = BarContainerView(builder.activity);
+    private val barContainerView = BarContainerView(builder.activity);
 
     internal fun create() {
         barContainerView.attachSmashBar(this)
@@ -108,30 +108,30 @@ open class LiveSmashBar(internal var builder: Builder) {
     }
 
     /**
-     * Shows a flashbar
+     * Shows a LiveSmashbar
      */
     fun show() {
         barContainerView.show(builder.activity)
     }
 
     /**
-     * Dismisses a flashbar
+     * Dismisses a LiveSmashbar
      */
     fun dismiss() {
         barContainerView.dismiss()
     }
 
     /**
-     * Returns true/false depending on whether the flashbar is showing or not
-     * This represents the partial appearance of the flashbar
+     * Returns true/false depending on whether the LiveSmashbar is showing or not
+     * This represents the partial appearance of the LiveSmashbar
      */
-//    fun isShowing() = flashbarContainerView.isBarShowing()
+    fun isShowing() = barContainerView.isBarShowing()
 
     /**
-     * Returns true/false depending on whether the flashbar has been completely shown or not
-     * This represents the complete appearance of the flashbar
+     * Returns true/false depending on whether the LiveSmashbar has been completely shown or not
+     * This represents the complete appearance of the LiveSmashbar
      */
-//    fun isShown() = flashbarContainerView.isBarShown()
+    fun isShown() = barContainerView.isBarShown()
 
     open class Builder(var activity: Activity) {
 
@@ -788,6 +788,9 @@ open class LiveSmashBar(internal var builder: Builder) {
             /*}*/
         }
 
+        /**
+         * set LiveData listener for any post callbacks.
+         **/
         fun liveDataCallback(lifecycleOwner: LifecycleOwner, liveData: MutableLiveData<Unit>) {
             liveData.observe(lifecycleOwner, Observer {
                 show()

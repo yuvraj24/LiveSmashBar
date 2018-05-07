@@ -28,9 +28,26 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "android.arch.lifecycle:livedata:1.1.1"
 }
 repositories {
     mavenCentral()
 }
+
+//task javadoc(type: Javadoc) {
+//    excludes = ['**/*.kt'] // < ---- Exclude all kotlin files from javadoc file.
+//    // ...
+//}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+//tasks.withType(Javadoc) {
+//    options.addBooleanOption('Xdoclint:none', true)
+//}
+
+// Place it at the end of the file
+//apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/bintrayv1.gradle'

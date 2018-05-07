@@ -1,9 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    ext.kotlin_version = '1.2.41' 
+    ext.kotlin_version = '1.2.41'
     repositories {
         google()
+        mavenCentral()
         jcenter()
     }
     dependencies {
@@ -12,16 +13,153 @@ buildscript {
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
+
+        // Two necessary plugins
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.2'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0' 
     }
 }
+
+plugins {
+    id "com.jfrog.bintray" version "1.7"
+}
+
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+group = 'org.jfrog.example.gradle'
+version = '1.0'
 
 allprojects {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven {
+            url "https://dl.bintray.com/yuvraj24/maven"
+        }
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
+/*ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'smashbar'
+
+    publishedGroupId = 'com.yuvraj.livesmashbar'
+    libraryName = 'LiveSmashBar'
+    artifact = 'smashbar'
+
+    libraryDescription = 'Android library for showing informative messages.'
+
+    siteUrl = 'https://github.com/yuvraj24/LiveSmashBar'
+    gitUrl = 'https://github.com/yuvraj24/LiveSmashBar.git'
+    vcsUrl = 'https://github.com/yuvraj24/LiveSmashBar.git'
+
+    libraryVersion = '1.0.0'
+    userOrg = 'Yuvraj Pandey'
+
+    developerId = 'yuvraj'
+    developerName = 'Yuvraj Pandey'
+    developerEmail = 'yuvrajpandey24@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}*/
+
+//install {
+//    repositories.mavenInstaller {
+//        pom.project {
+//            group "com.yuvraj.livesmashbar"
+//            artifactId "smashbar"
+//            version "1.0.0"
+//        }
+//    }
+//}
+
+task createPom << {
+    pom {
+        project {
+            groupId 'com.yuvraj.livesmashbar'
+            artifactId 'smashbar'
+            version '1.0.0'
+
+            inceptionYear '2018'
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+        }
+    }.writeTo("pom.xml")
 }
+
+bintray {
+    user = 'yuvraj24'
+    key = '9933cb4c01eda0b831ef4301a9a676fdc9b0df0e'
+
+    /*configurations = ['deployables'] //When uploading configuration files*/
+    // - OR -
+    /*publications = ['mavenStuff'] //When uploading Maven-based publication files*/
+    // - AND/OR -
+    /*filesSpec { //When uploading any arbitrary files ('filesSpec' is a standard Gradle CopySpec)
+        from 'arbitrary-files'
+        into 'standalon./gradlew bintrayuploade_files/level1'
+        rename '(.+)\\.(.+)', '$1-suffix.$2'
+    }*/
+    dryRun = false //[Default: false] Whether to run this as dry-run, without deploying
+    publish = true //[Default: false] Whether version should be auto published after an upload
+    override = false //[Default: false] Whether to override version artifacts already published
+    //Package configuration. The plugin will use the repo and name properties to check if the package already exists. In that case, there's no need to configure thgradle build bintrayUploade other package properties (like userOrg, desc, etc).
+    pkg {
+        repo = 'maven'
+        name = 'smashbar'
+//        userOrg = 'yuvraj'
+        //An optional organization name when the repo belongs to one of the user's orgs
+        desc = 'Android library for showing informatiive messages to user.'
+        websiteUrl = 'https://github.com/yuvraj24/LiveSmashBar'
+        issueTrackerUrl = 'https://github.com/yuvraj24/LiveSmashBar/issues'
+        vcsUrl = 'https://github.com/yuvraj24/LiveSmashBar.git'
+        licenses = ['Apache-2.0']
+        labels = ['Android', 'Kotlin', 'SnackBar', 'Toast', 'LiveData', 'LifecycleOwner']
+        publicDownloadNumbers = true
+        /*attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes*/
+
+        githubRepo = 'yuvraj24/LiveSmashBar' //Optional Github repository
+        githubReleaseNotesFile = 'README.md' //Optional Github readme file
+
+        //Optional Debian details
+        /*debian {
+            distribution = 'squeeze'
+            component = 'main'
+            architecture = 'i386,noarch,amd64'
+        }*/
+        //Optional version descriptor
+        version {
+            name = '1.0.0' //Bintray logical version name
+            desc = 'Android library for showing informatiive messages to user.'//Optional - Version-specific description'
+            released = new Date()//Optional - Date of the version release. 2 possible values: date in the format of 'yyyy-MM-dd'T'HH:mm:ss.SSSZZ' OR a java.util.Date instance
+            vcsTag = '1.0.0'
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+            //Optional version-level attributes
+            //Optional configuration for GPG signing
+            /*gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = 'passphrase' //Optional. The passphrase for GPG signing'
+            }*/
+            //Optional configuration for Maven Central sync of the version
+           /* mavenCentralSync {
+                sync = true
+                //[Default: true] Determines whether to sync the version to Maven Central.
+                user = 'userToken' //OSS user token: mandatory
+                password = 'paasword' //OSS user password: mandatory
+                close = '1'
+                //Optional property. By default the staging repository is closed and artifacts are released to Maven Central. You can optionally turn this behaviour off (by puting 0 as value) and release the version manually.
+            }*/
+        }
+    }
+} 

@@ -28,6 +28,7 @@ fun Activity?.getRootView(): ViewGroup? {
     return window.decorView as ViewGroup
 }
 
+@Suppress("DEPRECATION")
 inline fun <T : View> T.afterMeasured(crossinline f: T.() -> Unit) {
     viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
         override fun onGlobalLayout() {
