@@ -79,7 +79,7 @@ LiveSmashBar.Builder(this)
             .show();
 ```
 
-![Gravity_top](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/gravity_top.png)
+![Gravity_top](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/gravity_view_top.png)
 
 ### Icon
 
