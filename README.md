@@ -30,6 +30,9 @@ dependencies {
 ### Basic
 
 Shows a simple LiveSmashBar with description & duration.
+
+![Alt text](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/simple_livesmashbar.png)
+
 ```Kotlin
 LiveSmashBar.Builder(this)
             .description(getString(R.string.description))
@@ -52,9 +55,35 @@ LiveSmashBar.Builder(this)
             .show();
 ```
 
-![Alt text](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/simple_livesmashbar.png)
+### Gravity
 
+You can show LiveSmashBar at both Bottom ae well as Top of the screen by specifying GravityView.BOTTOM / GravityView.TOP.
 
+##### GravityView.BOTTOM :
+```Kotlin
+LiveSmashBar.Builder(this)
+            .title(getString(R.string.title))
+            .description(getString(R.string.description))
+            .gravity(GravityView.BOTTOM)
+            .duration(DURATION_SHORT)
+            .show();
+```
+
+##### GravityView.TOP :
+```Kotlin
+LiveSmashBar.Builder(this)
+            .title(getString(R.string.title))
+            .description(getString(R.string.description))
+            .gravity(GravityView.TOP)
+            .duration(DURATION_SHORT)
+            .show();
+```
+
+![Gravity_top](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/gravity_top.png)
+
+### Icon
+
+You can add icons to make details displayed on LiveSmashBar more meaningful.
 
 
 
