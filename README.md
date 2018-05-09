@@ -147,7 +147,6 @@ LiveSmashBar.Builder(this)
             .icon(R.mipmap.ic_launcher)
             .title(getString(R.string.title)) 
             .description(getString(R.string.description)) 
-            .gravity(GravityView.BOTTOM)
             .backgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
             .setBarStyle(BarStyle.DIALOG)
             .positiveActionText("DONE")
@@ -163,6 +162,28 @@ LiveSmashBar.Builder(this)
                      override fun onActionTapped(bar: LiveSmashBar) {
                              bar.dismiss()
                      }
-             })
-             .show();
+            })
+            .show();
 ```
+
+### Overlay
+
+LiveSmashBar allows to show modal overlay messages that dims the background & highlights the message to user.
+
+![Dialog_Style](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/overlay.png)
+
+```Kotlin
+LiveSmashBar.Builder(this)
+            .showIcon()
+            .icon(R.mipmap.ic_launcher)
+            .title(getString(R.string.flutter_title))
+            .description(getString(R.string.flutter_info))
+            .gravity(GravityView.TOP)
+            .dismissOnTapOutside()
+            .showOverlay()
+            .overlayBlockable()
+            .backgroundColor(ContextCompat.getColor(this, R.color.white))
+            .show();            
+```
+
+
