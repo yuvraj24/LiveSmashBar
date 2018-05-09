@@ -29,7 +29,11 @@ dependencies {
 
 ### Basic
 
+
+
 ![Alt text](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/simple_livesmashbar.png)
+
+
 
 Shows a simple LiveSmashBar with description & duration.
 
@@ -56,13 +60,15 @@ LiveSmashBar.Builder(this)
 ```
 
 
-### Gravity
+## Gravity
+
 
 ![Gravity_top](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/gravity_view_top.png)
 
+
 You can show LiveSmashBar at both Bottom ae well as Top of the screen by specifying GravityView.BOTTOM / GravityView.TOP.
 
-##### GravityView.BOTTOM :
+### GravityView.BOTTOM :
 ```Kotlin
 LiveSmashBar.Builder(this)
             .title(getString(R.string.title))
@@ -72,7 +78,7 @@ LiveSmashBar.Builder(this)
             .show();
 ```
 
-##### GravityView.TOP :
+### GravityView.TOP :
 ```Kotlin
 LiveSmashBar.Builder(this)
             .title(getString(R.string.title))
@@ -83,9 +89,11 @@ LiveSmashBar.Builder(this)
 ```
 
 
-### LiveData Support
+## LiveData Support
+
 
 ![LiveData](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/livedata.png)
+
 
 LiveSmashBar allows support for LiveData , which can be used for showing similar group of messages with single initialization thereby avoiding code redundancy. This can be achieved by simply creating a LiveSmashBar object & passing the livedata object as parameter. So when ever you post anything to livedata, your LiveSmashBar will receive that call back and will display the same to the end user. Following is a sample demostrating the use of livedata,
 
@@ -105,9 +113,11 @@ LiveSmashBar.Builder(this)
 ```
 
 
-### Icon
+## Icon
+
 
 ![Gravity_top](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/icon.png)
+
 
 You can add icons to make details displayed on LiveSmashBar more meaningful & intuitive.
 
@@ -137,9 +147,11 @@ LiveSmashBar.Builder(this)
 ```
 
 
-### Primary Button
+## Primary Button
+
 
 ![Primary_Action](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/primary_action.png)
+
 
 Similar to Snackbar, a message can be accompanied by an action button which can be used to perform some functionality. Below example listens for action button clikc to dismiss LiveSmashBar displayed to user.
 
@@ -158,9 +170,11 @@ LiveSmashBar.Builder(this)
 ```
 
 
-### Dialog Style
+## Dialog Style
+
 
 ![Dialog_Style](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/dialog_style.png)
+
 
 LiveSmashBar can also be used to display a dialog view with a message & action buttons. By defalut the view type set is BarStyle.DEFAULT_MESSAGE which shows basic message with action button. For displaying dialog style LiveSmashBar use the following snippet,
 
@@ -188,9 +202,11 @@ LiveSmashBar.Builder(this)
             .show();
 ```
 
-### Overlay
+## Overlay
+
 
 ![Dialog_Style](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/overlay.png)
+
 
 LiveSmashBar allows to show modal overlay messages that dims the background & highlights the message to user. It blocks the UI if function overlayBlockable() is called thereby blocking user taps on the underlying content. You can dismiss the overlay by calling function dismissOnTapOutside() for dismissing the overlay.
 
