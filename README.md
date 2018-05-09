@@ -223,3 +223,69 @@ LiveSmashBar.Builder(this)
             .backgroundColor(ContextCompat.getColor(this, R.color.white))
             .show();            
 ```
+
+## Event Listeners
+You can subscribe to events like when the LiveSmashBar is showing, or dismissing. You can also subscribe to progress updates when the LiveSmashBar is being shown or dismissed to perform animations on other views if needed.
+
+You can also subscribe to tap events inside or outside the bar.
+
+### Show Event
+
+You can subscribe to events on `OnEventShowListener` as follows,
+
+```kotlin
+LiveSmashBar.Builder(this) 
+        .title("Hello World!")
+        .description("You can listen to events when the LiveSmashBar is shown")
+        .barShowListener(object : LiveSmashBar.OnEventShowListener {
+            override fun onShowing(bar: LiveSmashBar) {
+                Log.d(TAG, "LiveSmashBar is showing")
+            }
+
+            override fun onShown(bar: LiveSmashBar) {
+                Log.d(TAG, "LiveSmashBar is shown")
+            }
+        })
+        .show()
+```
+### Dismiss
+You can listen to events on `OnEventDismissListener` for dismissing events. 
+You can also specifically get to know the reason behind the bar dismiss action - `TIMEOUT`, `MANUAL`, `TAP_OUTSIDE` and `SWIPE`.
+
+```kotlin
+LiveSmashBar.Builder(this) 
+        .title("Hello World!")
+        .duration(500)
+        .description("You can listen to events when the LiveSmashBar is dismissed")
+        .barDismissListener(object : LiveSmashBar.OnEventDismissListener {
+            override fun onDismissing(bar: LiveSmashBar, isSwiped: Boolean) {
+                Log.d(TAG, "LiveSmashBar is dismissing with $isSwiped")
+            }
+
+            override fun onDismissed(bar: LiveSmashBar, event: LiveSmashBar.DismissEvent) {
+                Log.d(TAG, "LiveSmashBar is dismissed with event $event")
+            }
+        }) 
+        .show()
+```
+
+### Taps
+
+You can listen to tap events inside or outside of the LiveSmashBar.
+
+```kotlin
+LiveSmashBar.Builder(this) 
+        .title("Hello World!")
+        .description("You can listen to tap events inside or outside the LiveSmashBar.")
+        .listenBarTaps(object : LiveSmashBar.OnEventListener {
+            override fun onTap(bar: LiveSmashBar) {
+                Log.d(TAG, "Bar tapped")
+            }
+        })
+        .listenOutsideTaps(object : LiveSmashBar.OnTapListener {
+            override fun onTap(bar: LiveSmashBar) {
+                Log.d(TAG, "Outside tapped")
+            }
+        })
+        .show()
+```
