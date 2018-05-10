@@ -18,9 +18,22 @@ You can check the <a href="https://github.com/yuvraj24/LiveSmashBar/blob/master/
 
 # Download
 
-This library is available in **JCenter** which can be imported from source as a module.
+This library is available in maven & jcenter which can also be imported from source as a module.
+
+### maven
+
+```Maven
+<dependency>
+    <groupId>com.yuvraj.livesmashbar</groupId>
+    <artifactId>smashbar</artifactId>
+    <version>1.0.0</version>
+    <type>pom</type>
+</dependency>
+```
+
+### gradle
  
-```groovy
+```JCenter
 dependencies {
     // other dependencies here
     implementation 'com.yuvraj.livesmashbar:smashbar:1.0.0'
