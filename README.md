@@ -4,7 +4,7 @@
 
 LiveSmashBar allows you a great alternative for native snackbar & toast in Android. It allows a great extent of customization & flexibility in terms of usage & behaviour.
 
-Also its has support for **LiveData** which can be beneficial for displaying repetative messages just be single initialization.
+Also it has support for **LiveData** which can be beneficial for displaying repetative messages just be single initialization.
 
 Library has been designed & developed purely in *Kotlin*. ❤️
 
@@ -14,7 +14,7 @@ Library has been designed & developed purely in *Kotlin*. ❤️
 [![GitHub followers](https://img.shields.io/github/followers/yuvraj24.svg?style=social&label=Follow)](https://github.com/yuvraj24)  [![Twitter Follow](https://img.shields.io/twitter/follow/yuvrajpandey24.svg?style=social)](https://twitter.com/yuvrajpandey24)
 
 # Samples
-You can check the <a href="https://github.com/yuvraj24/LiveSmashBar/blob/master/app/src/main/java/com/yuvraj/livesmashbardemo/SampleActivity.kt">Demo Project</a> developed in kotlin for better understanding of concepts & usage.
+You can check the <a href="https://github.com/yuvraj24/LiveSmashBar/tree/master/app">Demo Project</a> developed in kotlin for better understanding of concepts & usage.
 
 <a href='https://play.google.com/store/apps/details?id=com.yuvraj.livesmashbar'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>
 
@@ -62,7 +62,7 @@ LiveSmashBar.Builder(this)
             .show();
 ```
 
-Also you can show both Title & Description along with duration in milliseconds. Duration is set to indefinite which means it won't dismiss until & unless specified for.Also you can use predefined parameters i.e DURATION_SHORT = 1000, DURATION_LONG = 2500 for specifying duration for LiveSmashBar.
+Also you can show both title & description along with duration in milliseconds. Duration is set to indefinite which means it won't dismiss until & unless specified for.Also you can use predefined parameters i.e DURATION_SHORT = 1000, DURATION_LONG = 2500 for specifying duration for LiveSmashBar.
 
 ```Kotlin
 LiveSmashBar.Builder(this)
@@ -111,7 +111,7 @@ LiveSmashBar.Builder(this)
 ![LiveData](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/livedata.png)
 
 
-LiveSmashBar allows support for LiveData , which can be used for showing similar group of messages with single initialization thereby avoiding code redundancy. This can be achieved by simply creating a LiveSmashBar object & passing the livedata object as parameter. So when ever you post anything to livedata, your LiveSmashBar will receive that call back and will display the same to the end user. Following is a sample demostrating the use of livedata,
+LiveSmashBar allows support for LiveData , which can be used for showing similar group of messages with single initialization thereby avoiding code redundancy. This can be achieved by simply creating a LiveSmashBar instance & passing the livedata object as parameter. So when ever you post anything to livedata, your LiveSmashBar will receive that call back and will display the same to the end user. Following is a sample demostrating the use of livedata,
 
 ```Kotlin
 val liveData: MutableLiveData<Unit> = MutableLiveData()
@@ -119,12 +119,9 @@ val liveData: MutableLiveData<Unit> = MutableLiveData()
 LiveSmashBar.Builder(this)
             .showIcon()
             .icon(R.mipmap.ic_launcher)
-            .title(getString(R.string.flutter_title))
-            .titleColor(ContextCompat.getColor(this, R.color.white))
-            .description(getString(R.string.flutter_info))
-            .descriptionColor(ContextCompat.getColor(this, R.color.white))
+            .title(getString(R.string.flutter_title)) 
+            .description(getString(R.string.flutter_info)) 
             .gravity(GravityView.BOTTOM)
-            .duration(3000)
             .liveDataCallback(this, liveData)
 ```
 
@@ -169,7 +166,7 @@ LiveSmashBar.Builder(this)
 ![Primary_Action](https://github.com/yuvraj24/LiveSmashBar/blob/master/images/primary_action.png)
 
 
-Similar to Snackbar, a message can be accompanied by an action button which can be used to perform some functionality. Below example listens for action button clikc to dismiss LiveSmashBar displayed to user.
+Similar to Snackbar, a message can be accompanied by an action button which can be used to perform some functionality. Below example listens for action button click to dismiss LiveSmashBar displayed to user.
 
 ```Kotlin
 LiveSmashBar.Builder(this)
@@ -241,7 +238,7 @@ LiveSmashBar.Builder(this)
 ```
 
 ## Event Listeners
-You can subscribe to events like when the LiveSmashBar is showing, or dismissing. You can also subscribe to progress updates when the LiveSmashBar is being shown or dismissed to perform animations on other views if needed.
+You can subscribe to events like when the LiveSmashBar is showing, or dismissing. You can also subscribe to when the LiveSmashBar is being shown or dismissed to perform animations on other views if needed.
 
 You can also subscribe to tap events inside or outside the bar.
 
@@ -270,8 +267,7 @@ You can also specifically get to know the reason behind the bar dismiss action -
 
 ```kotlin
 LiveSmashBar.Builder(this) 
-        .title("Hello World!")
-        .duration(500)
+        .title("Hello World!") 
         .description("You can listen to events when the LiveSmashBar is dismissed")
         .barDismissListener(object : LiveSmashBar.OnEventDismissListener {
             override fun onDismissing(bar: LiveSmashBar, isSwiped: Boolean) {
@@ -310,7 +306,7 @@ LiveSmashBar.Builder(this)
 
 ### Yuvraj Pandey
 
-for more tech updates follow me,
+For more exciting updates follow me,
 
 <a href="https://twitter.com/yuvrajpandey24" target="_blank"><img src="https://github.com/yuvraj24/LiveSmashBar/blob/master/images/twitter.png" width="40" height="40"></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.linkedin.com/in/yuvraj24" target="_blank"><img src="https://github.com/yuvraj24/LiveSmashBar/blob/master/images/linkedin.png" width="40" height="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/yuvraj24" target="_blank"><img src="https://github.com/yuvraj24/LiveSmashBar/blob/master/images/github.png" height="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://medium.com/@yuvrajpandey24" target="_blank"><img src="https://github.com/yuvraj24/LiveSmashBar/blob/master/images/medium.png" width="40" height="40"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://play.google.com/store/apps/developer?id=Yuvraj+Pandey"><img src="https://github.com/yuvraj24/LiveSmashBar/blob/master/images/playstore.png" width="40" height="40"></a>
  
