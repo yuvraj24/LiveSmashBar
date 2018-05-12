@@ -14,4 +14,9 @@
     <color name="default_description_color">#FFFFFF</color>
     <color name="default_action_color">#FFFFFF</color>
     <color name="default_background_color">#323232</color>
+
+    <color name="blue">#2196F3</color>
+    <color name="teal">#009688</color>
+    <color name="orange">#FF5722</color>
+    <color name="red">#F44336</color>
 </resources>

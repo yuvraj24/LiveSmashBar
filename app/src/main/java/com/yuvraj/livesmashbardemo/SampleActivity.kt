@@ -43,7 +43,7 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
         listSamples.add("Simple LiveSmashBar with Gravity Top")
         listSamples.add("Simple LiveSmashBar with Gravity Top , Icon & Action button")
         listSamples.add("Simple Dialog LiveSmashBar with Gravity Top , Icon & Action button")
-        listSamples.add("Simple Dialog LiveSmashBar with Gravity Top")
+        listSamples.add("Simple Overlay LiveSmashBar with Gravity Top")
         listSamples.add("Simple LiveSmashBar Pulse Animation effect")
     }
 
@@ -84,6 +84,7 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
         when (position) {
             0 ->
                 LiveSmashBar.Builder(this)
+                        .icon(R.mipmap.ic_launcher)
                         .title(getString(R.string.title))
                         .titleColor(ContextCompat.getColor(this, R.color.white))
                         .description(getString(R.string.description))
@@ -102,7 +103,7 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
                         .gravity(GravityView.BOTTOM)
                         .duration(3000)
                         .primaryActionText("DONE")
-                        .primaryActionTextColor(ContextCompat.getColor(this, R.color.white))
+                        .primaryActionTextColor(ContextCompat.getColor(this, R.color.material_deep_teal_500))
                         .primaryActionEventListener(object : OnEventTapListener {
                             override fun onActionTapped(bar: LiveSmashBar) {
                                 bar.dismiss()
@@ -118,7 +119,7 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
                         .description(getString(R.string.description))
                         .descriptionColor(ContextCompat.getColor(this, R.color.white))
                         .gravity(GravityView.BOTTOM)
-                        .backgroundColor(ContextCompat.getColor(this, R.color.colorPrimary))
+                        .backgroundColor(ContextCompat.getColor(this, R.color.material_blue_grey_900))
                         .setBarStyle(BarStyle.DIALOG)
                         .positiveActionText("DONE")
                         .positiveActionTextColor(ContextCompat.getColor(this, R.color.white))
@@ -190,7 +191,7 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
                         .gravity(GravityView.TOP)
                         .duration(3000)
                         .primaryActionText("DONE")
-                        .primaryActionTextColor(ContextCompat.getColor(this, R.color.white))
+                        .primaryActionTextColor(ContextCompat.getColor(this, R.color.material_deep_teal_500))
                         .primaryActionEventListener(object : OnEventTapListener {
                             override fun onActionTapped(bar: LiveSmashBar) {
                                 bar.dismiss()
@@ -227,9 +228,9 @@ class SampleActivity : AppCompatActivity(), OnEventTapListener,
                 LiveSmashBar.Builder(this)
                         .showIcon()
                         .icon(R.mipmap.ic_launcher)
-                        .title(getString(R.string.flutter_title))
+                        .title(getString(R.string.title))
                         .titleColor(ContextCompat.getColor(this, R.color.slate_black))
-                        .description(getString(R.string.flutter_info))
+                        .description(getString(R.string.description))
                         .descriptionColor(ContextCompat.getColor(this, R.color.slate_black))
                         .gravity(GravityView.TOP)
                         .dismissOnTapOutside()

@@ -32,7 +32,7 @@ dependencies {
     implementation "android.arch.lifecycle:livedata:1.1.1"
 }
 repositories {
-    mavenCentral()
+//    mavenCentral()
 }
 
 //task javadoc(type: Javadoc) {
@@ -47,7 +47,4 @@ tasks.withType(Javadoc).all {
 //tasks.withType(Javadoc) {
 //    options.addBooleanOption('Xdoclint:none', true)
 //}
-
-// Place it at the end of the file
-//apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/installv1.gradle'
-//apply from: 'https://raw.githubusercontent.com/brightec/JCenter/master/bintrayv1.gradle'
+ 

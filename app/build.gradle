@@ -16,7 +16,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,7 +29,7 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
 //    implementation 'com.yuvraj.livesmashbar:smashbar:1.0.0'
-    implementation project (':library')
+    implementation project (':smashbar')
     implementation 'com.android.support:recyclerview-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
     implementation "android.arch.lifecycle:livedata:1.1.1"
