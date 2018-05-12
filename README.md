@@ -16,6 +16,8 @@ Library has been designed & developed purely in *Kotlin*. ❤️
 # Samples
 You can check the <a href="https://github.com/yuvraj24/LiveSmashBar/blob/master/app/src/main/java/com/yuvraj/livesmashbardemo/SampleActivity.kt">Demo Project</a> developed in kotlin for better understanding of concepts & usage.
 
+<a href='https://play.google.com/store/apps/details?id=com.yuvraj.livesmashbar'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height="80px"/></a>
+
 # Download
 
 This library is available in maven & jcenter which can also be imported from source as a module.
