@@ -2,9 +2,9 @@
 
 [![Download](https://api.bintray.com/packages/yuvraj24/maven/smashbar/images/download.svg)](https://bintray.com/yuvraj24/maven/smashbar/_latestVersion) [![API](https://img.shields.io/badge/API-16%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=16) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-LiveSmashBar allows you a great alternative for native snackbar & toast in Android. It allows a great extent of customization & flexibility in terms of usage & behaviour.
+LiveSmashBar allows you a great alternative for native snackbar & toast in Android. It allows a great extent of customisation & flexibility in terms of usage & behaviour.
 
-Also it has support for **LiveData** which can be beneficial for displaying repetative messages just be single initialization.
+Also it has support for **LiveData** which can be beneficial for displaying repetitive messages just be single initialization.
 
 Library has been designed & developed purely in *Kotlin*. ❤️
 
