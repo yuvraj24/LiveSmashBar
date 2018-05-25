@@ -305,6 +305,7 @@ LiveSmashBar.Builder(this)
 # About Me
 
 ### Yuvraj Pandey
+I am a passionate Mobility Engineer which likes to push himself on various fronts of technologies.  
 
 For more exciting updates follow me,
 
